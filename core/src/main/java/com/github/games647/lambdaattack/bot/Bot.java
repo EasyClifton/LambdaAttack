@@ -8,6 +8,7 @@ import com.github.games647.lambdaattack.bot.listener.SessionListener111;
 import com.github.games647.lambdaattack.bot.listener.SessionListener112;
 import com.github.games647.lambdaattack.bot.listener.SessionListener114;
 import com.github.games647.lambdaattack.bot.listener.SessionListener115;
+import com.github.games647.lambdaattack.bot.listener.SessionListener116;
 import com.github.steveice10.mc.auth.data.GameProfile;
 import com.github.steveice10.packetlib.Client;
 import com.github.steveice10.packetlib.Session;
@@ -58,6 +59,9 @@ public class Bot {
                 break;
             case VERSION_1_15:
                 client.getSession().addListener(new SessionListener115(options, this));
+                break;
+            case VERSION_1_16:
+                client.getSession().addListener(new SessionListener116(options, this));
                 break;
             default:
                 throw new IllegalStateException("Unknown session listener");
